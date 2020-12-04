@@ -1,0 +1,125 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+header {
+    height: 50px;
+    background-color: #353535;
+}
+.top {
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   height: 50px;
+}
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:#FFF;
+    font-size: 28px;
+}
+.menu nav ul {
+    display: flex;
+}
+.menu a {
+    display:block;
+    color:#FFF;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.menu li:hover{
+    background: #3479ba;
+}
+.menu-mobile {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+.line {
+    width: 50px;
+    height: 5px;
+    background: #FFF;
+
+}
+section {
+    background: #3479ba;
+}
+.section-area {
+    display: flex;
+    justify-content: space-around;
+}
+.section-area-title {
+    margin:50px 0px 50px 0px;
+}
+.section-area-title h1 {
+    font-size: 48px;
+    color:#FFF;
+    margin-bottom: 10px;
+}
+.section-area-title p {
+    font-size: 16px;
+    color: #FFF;
+    margin-bottom: 30px;
+}
+.section-area-title a {
+    padding: 10px 20px;
+    background: #ffc001;
+    border-radius:5px;
+    color:#000200;
+    width:200px;
+    font-size: 18px;
+}
+.main-area {
+    margin-bottom: 50px;
+}
+.main-title {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+.main-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap:30px;
+}
+.main-images img {
+    width: 100%;
+}
+footer {
+    height: 50px;
+    background-color: #3479ba;
+    color:#FFF;
+    text-align: center;
+    line-height: 50px;
+}
+
+@media (max-width:425px){
+    .menu-mobile{
+        display: flex;
+    }
+    .menu nav ul {
+        display: none;
+    }
+    .section-area-image {
+        display: none;
+    }
+    .main-images {
+        grid-template-columns: 100px 100px;
+    }
+}
