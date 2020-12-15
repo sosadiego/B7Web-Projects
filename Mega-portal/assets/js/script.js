@@ -1,29 +1,31 @@
-let totalSliders = document.querySelectorAll('.slider-item').length;
-let currentSlider = 0;
-let slider = document.querySelector('.slider').clientWidth;
+let sliderItem = document.querySelectorAll('.slider-item').length;
+let currentSlide = 0;
 
-document.querySelector('.slider-width').style.width = `${slider * totalSliders}px`;
+let sliderCotainer = document.querySelector('.slider').clientWidth;
+
+document.querySelector('.controls').style.height = `${document.querySelector('.slider-area').clientHeight}px`;
+
+document.querySelector('.slider-area').style.width = `${sliderCotainer * sliderItem}px`;
 
 
 function goPrev(){
-    currentSlider--;
-    if(currentSlider < 0){
-        currentSlider = totalSliders -1
+    currentSlide--;
+    if(currentSlide < 0){
+        currentSlide = sliderItem -1;
     }
-    updateMargin();
+    updateMargin()
 }
+
 function goNext(){
-    currentSlider++;
-    if(currentSlider > (totalSliders -1)){
-        currentSlider = 0;
+    currentSlide++;
+    if(currentSlide > (sliderItem - 1)){
+        currentSlide = 0;
     }
     updateMargin();
 }
 
 function updateMargin(){
-    let sliderItem = document.querySelector('.slider-item').clientWidth;
-    console.log(sliderItem)
-    let newMargin = (currentSlider * sliderItem);
-    document.querySelector('.slider-width').style.marginLeft = `-${newMargin}px`;
+    let newMargin = (currentSlide * sliderCotainer);
+    document.querySelector('.slider-area').style.marginLeft = `-${newMargin}px`
 }
-setInterval(goPrev, 2000);
+setInterval(goNext, 4000);
